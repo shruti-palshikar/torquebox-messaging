@@ -11,7 +11,7 @@ stomp:
   stomplets:
     stomplet.one:
       class: Simple
-      route: '/stomplets/simple'
+      route: '/stomplets/simple.rb'
       config:
         destination: /queues/test_queue
         type: queue
