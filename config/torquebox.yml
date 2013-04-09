@@ -7,11 +7,11 @@ queues:
 messaging:
  /queues/test_queue:  TestConsumer
 stomp:
-  host: localhost
+  host: 192.168.2.130
   stomplets:
     stomplet.one:
-      class: TestStompletController
-      route: '/controllers/test_stomplet_controller'
+      class: Simple
+      route: '/stomplets/simple'
       config:
         destination: /queues/test_queue
         type: queue

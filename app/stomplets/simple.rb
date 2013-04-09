@@ -1,9 +1,25 @@
 require 'torquebox-stomp'
+class Simple < TorqueBox::Stomp::JmsStomplet
 
-class Simple
+  def initialize()
+    super
+  end
 
-def on_message(message,session)
-subscriber.send(message)
+
+  def configure(stomplet_config)
+    super
+    @destination_type = stomplet_config['type']
+    @destination_name = stomplet_config['destination']
+  end
+
+  def on_message(stomp_message,session)
+    send_to(destination_for(@destination_name,@destination_type),stomp_message)
+  end
+
+  def on_subscribe(subscriber)
+    subscribe_to(subscriber,destination_for(@destination_name,@destination_type))
+  end
+
 end
 
-	end
+  
