@@ -2,14 +2,16 @@
 application:
   root: C:/
 environment: {}
+queues:
+  /queues/test_queue:
 messaging:
- default_message_encoding: json
- /queues/test_queue:  test_consumer
+ /queues/test_queue:  TestConsumer
 stomp:
+  host: localhost
   stomplets:
-    stomp_controller:
-      class: StompController
-      route: /app/controllers/stomp_controller'
+    stomplet.one:
+      class: TestStompletController
+      route: '/controllers/test_stomplet_controller'
       config:
-        type: queue
         destination: /queues/test_queue
+        type: queue

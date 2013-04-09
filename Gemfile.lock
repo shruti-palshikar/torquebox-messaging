@@ -165,5 +165,5 @@ DEPENDENCIES
   torquebox-messaging
   torquebox-naming
   torquebox-server
-  torquebox-stomp
+  torquebox-stomp (~> 2.3.0)
   uglifier (>= 1.0.3)
