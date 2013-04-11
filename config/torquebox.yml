@@ -9,7 +9,7 @@ stomp:
   stomplets:
     simple:
       class: Simple
-      route: '/stomplet/simple'
-      config:
-        destination: /queues/test_queue
-        type: queue
+      route: '/queues/:test_queue'
+      # config:
+      #   destination: /queues/test_queue
+      #   type: queue
