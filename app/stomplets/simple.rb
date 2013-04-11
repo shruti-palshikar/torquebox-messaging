@@ -29,6 +29,9 @@ class Simple < TorqueBox::Stomp::JmsStomplet
 
   def on_subscribe(subscriber)
     subscribe_to(subscriber,@my_jms_queue)
+    Rails.logger.info subscriber
+    subscriber.send(message)
+    Rails.logger.info message
     # subscribe_to(subscriber,destination_for(@destination_name,@destination_type))
     
     # Rails.logger.info @subscriber
