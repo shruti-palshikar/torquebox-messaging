@@ -1,0 +1,2 @@
+module StompHelper
+end

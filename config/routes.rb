@@ -1,4 +1,6 @@
 TorqueboxMessaging::Application.routes.draw do
+  get "stomp/index"
+
   get "simple/index"
 
   # The priority is based upon order of creation:
@@ -60,4 +62,5 @@ TorqueboxMessaging::Application.routes.draw do
   resources :books
   resources :test_stomplet
   resources :bridge_stomplet
+  root :to => 'stomp#index'
 end

@@ -2,16 +2,14 @@
 application:
   root: C:/
 environment: {}
-queues:
-  /queues/test_queue:
-messaging:
- /queues/test_queue:  TestConsumer
+#messaging:
+ #/queues/test_queue:  TestConsumer
 stomp:
   host: 192.168.2.130
   stomplets:
-    stomplet.one:
+    simple:
       class: Simple
-      route: '/stomplets/simple.rb'
+      route: '/stomplet/simple'
       config:
         destination: /queues/test_queue
         type: queue
